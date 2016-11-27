@@ -3,11 +3,15 @@ var b;
 var grid;
 var counter=0;
 var score=0;
+var cnv;
 
 function setup() {
   canvas.width=320;
   canvas.height=500;
-  createCanvas(canvas.width,canvas.height);
+  var cnv = createCanvas(canvas.width,canvas.height);
+  cnv.parent('tetris');
+
+
   frameRate(10);
 
   b = new Brick();
@@ -39,7 +43,7 @@ function keyPressed(){
     b.rotate();
   }
   else if(keyCode===DOWN_ARROW ){
-    
+
   }
 
 }
