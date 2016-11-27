@@ -15,8 +15,6 @@ function setup() {
   grid.createGrid();
 
   b.reset();
-
-
 }
 
 function draw() {
@@ -39,6 +37,9 @@ function keyPressed(){
   }
   else if( keyCode===UP_ARROW ){
     b.rotate();
+  }
+  else if(keyCode===DOWN_ARROW ){
+    
   }
 
 }
