@@ -2,6 +2,7 @@ var scl=20;
 var b;
 var grid;
 var counter=0;
+var score=0;
 
 function setup() {
   canvas.width=320;
