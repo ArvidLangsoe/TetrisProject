@@ -30,6 +30,7 @@ function draw() {
   b.show();
 
   grid.showGrid();
+  grid.findFullLines();
   b.setBlocksXSpeed(0);
   counter=(counter+1)%updateSpeed;
 }

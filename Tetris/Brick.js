@@ -21,7 +21,7 @@ function Block(x_new,y_new,rgb){
   }
 
   this.lockToGrid=function(){
-    grid.gridArray[this.y][this.x]=new Block(this.x,this.y,rgb);
+    grid.gridArray[this.y][this.x]=new Block(this.x,this.y,this.color);
   }
   this.setXSpeed=function(direction){
     this.xspeed=direction;
