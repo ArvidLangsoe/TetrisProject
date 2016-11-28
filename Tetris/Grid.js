@@ -20,9 +20,9 @@ function Grid(){
     for(var i=0;i<this.gridArray.length;i++){
       for(var j=0;j<this.gridArray[0].length;j++){
         if(this.gridArray[i][j]!=false){
-           this.gridArray[i][j].show();
-         }
+          this.gridArray[i][j].show();
         }
+      }
     }
   }
 }
