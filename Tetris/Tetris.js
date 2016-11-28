@@ -16,6 +16,7 @@ function setup() {
 
   b = new Brick();
   grid=new Grid();
+
   grid.createGrid();
 
   b.reset();
