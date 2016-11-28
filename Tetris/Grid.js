@@ -15,6 +15,18 @@ function Grid(){
   }
 
 
+
+  this.deleteGrid=function(){
+    for(var i=0;i<this.gridArray.length;i++){
+      for(var j=0;j<this.gridArray[0].length;j++){
+        this.gridArray[i][j]=false;
+      }
+    }
+  }
+
+
+
+
   this.removeLineAndMove=function(row){
     for(var i=row;i>0;i--){
       for(var j=0;j<this.gridArray[0].length;j++){
@@ -31,7 +43,14 @@ function Grid(){
   }
 
 
-
+  this.checkTopLine=function(){
+    for(var j=0;j<this.gridArray[0].length;j++){
+      if(this.gridArray[3][j]!=false){
+          this.deleteGrid();
+          break;
+      }
+    }
+  }
   this.findFullLines=function(){
     var breakFlag;
 

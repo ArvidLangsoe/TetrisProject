@@ -79,16 +79,6 @@ function Brick(){
 
   }
 
-  /*
-  this.moveBlocks=function(){
-  for(var i=0;i<4;i++){
-  this.blockArray[i].updateX();
-  if(counter==0){
-  this.blockArray[i].updateY();
-}
-}
-}
-*/
 
 this.setBlocksXSpeed=function(direction){
   for(var i=0;i<4;i++){
