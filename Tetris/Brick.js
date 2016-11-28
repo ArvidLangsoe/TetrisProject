@@ -10,9 +10,9 @@ function Block(x_new,y_new,rgb){
 
     this.y=this.y+this.yspeed;
   }
+
   this.updateX=function(){
     this.x=this.x+this.xspeed;
-
   }
 
   this.show=function(){
@@ -42,17 +42,30 @@ function Brick(){
     }
   }
 
+
   this.update=function(){
     for(var i=0;i<4;i++){
-      if(this.blockArray[i].y==(height/scl)-1){
-        this.lockAndReset();
+      this.blockArray[i].updateX();
+    }
+    if(counter==0){
+      for(var i=0;i<4;i++){
+
+        if(this.blockArray[i].y==(height/scl)-1){
+          this.lockAndReset();
+          return;
+        }
+        else if(grid.gridArray[this.blockArray[i].y+1][this.blockArray[i].x]!=false){
+          this.lockAndReset();
+          return;
+        }
+
       }
-      else if(grid.gridArray[this.blockArray[i].y+1][this.blockArray[i].x]!=false){
-        this.lockAndReset();
+      for(var i=0;i<4;i++){
+        this.blockArray[i].updateY();
       }
     }
-    this.moveBlocks();
   }
+
 
   this.lockAndReset=function(){
     this.lockBlocks()
@@ -66,16 +79,16 @@ function Brick(){
 
   }
 
+/*
   this.moveBlocks=function(){
     for(var i=0;i<4;i++){
       this.blockArray[i].updateX();
       if(counter==0){
         this.blockArray[i].updateY();
       }
-
     }
-
   }
+  */
 
   this.setBlocksXSpeed=function(direction){
     for(var i=0;i<4;i++){
@@ -136,7 +149,7 @@ function Brick(){
 }
 
   this.reset=function(){
-    var type=floor(random(0,7));
+    var type=Math.floor(random(0,7));
     this.x=floor((width/scl)/2);
     switch(type){
       case 0:

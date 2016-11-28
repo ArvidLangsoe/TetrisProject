@@ -2,6 +2,7 @@ var scl=20;
 var b;
 var grid;
 var counter=0;
+var updateSpeed=20;
 var score=0;
 var cnv;
 
@@ -11,8 +12,7 @@ function setup() {
   var cnv = createCanvas(canvas.width,canvas.height);
   cnv.parent('tetris');
 
-
-  frameRate(10);
+  frameRate(50);
 
   b = new Brick();
   grid=new Grid();
@@ -27,9 +27,10 @@ function draw() {
   b.update();
 
   b.show();
+
   grid.showGrid();
   b.setBlocksXSpeed(0);
-  counter=(counter+1)%4;
+  counter=(counter+1)%updateSpeed;
 }
 
 function keyPressed(){
@@ -43,7 +44,12 @@ function keyPressed(){
     b.rotate();
   }
   else if(keyCode===DOWN_ARROW ){
-
+    updateSpeed=4;
   }
 
+}
+function keyReleased(){
+  if(keyCode===DOWN_ARROW ){
+    updateSpeed=20;
+  }
 }
