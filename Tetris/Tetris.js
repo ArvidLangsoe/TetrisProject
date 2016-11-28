@@ -10,9 +10,9 @@ function setup() {
   window.addEventListener("keydown", function(e) {
     // space and arrow keys
     if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
-        e.preventDefault();
+      e.preventDefault();
     }
-}, false);
+  }, false);
   canvas.width=320;
   canvas.height=500;
   var cnv = createCanvas(canvas.width,canvas.height);
