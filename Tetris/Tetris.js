@@ -7,6 +7,12 @@ var score=0;
 var cnv;
 
 function setup() {
+  window.addEventListener("keydown", function(e) {
+    // space and arrow keys
+    if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+        e.preventDefault();
+    }
+}, false);
   canvas.width=320;
   canvas.height=500;
   var cnv = createCanvas(canvas.width,canvas.height);
@@ -23,6 +29,7 @@ function setup() {
 }
 
 function draw() {
+
   background(51);
 
   b.update();
