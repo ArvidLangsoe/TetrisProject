@@ -29,8 +29,12 @@ function setup() {
 }
 
 function draw() {
-
   background(51);
+
+  fill(255, 255, 255);
+  textSize(20);
+  text("Score: " +score, 10, 20);
+  text("Next: " , width-150, 20);
 
   b.update();
 

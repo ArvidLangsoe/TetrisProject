@@ -22,6 +22,7 @@ function Grid(){
         this.gridArray[i][j]=false;
       }
     }
+    score=0;
   }
 
 
@@ -45,7 +46,7 @@ function Grid(){
 
   this.checkTopLine=function(){
     for(var j=0;j<this.gridArray[0].length;j++){
-      if(this.gridArray[3][j]!=false){
+      if(this.gridArray[5][j]!=false){
           this.deleteGrid();
           break;
       }
@@ -66,6 +67,7 @@ function Grid(){
       if(breakFlag){
         continue;
       }
+      score++;
       this.removeLineAndMove(i);
 
     }
