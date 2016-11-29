@@ -252,10 +252,10 @@ function Brick(){
       break;
       case 6:
       var rgb=[255,0,0];
-      this.blockArray[0]=new Block(this.x-1,this.y-1,rgb);
-      this.blockArray[1]=new Block(this.x,this.y-1,rgb);
-      this.blockArray[2]=new Block(this.x,this.y,rgb);
-      this.blockArray[3]=new Block(this.x+1,this.y,rgb);
+      this.blockArray[0]=new Block(this.x,this.y-1,rgb);
+      this.blockArray[1]=new Block(this.x+1,this.y-1,rgb);
+      this.blockArray[2]=new Block(this.x+1,this.y,rgb);
+      this.blockArray[3]=new Block(this.x+2,this.y,rgb);
       break;
 
     }
