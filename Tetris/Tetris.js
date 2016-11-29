@@ -5,6 +5,7 @@ var counter=0;
 var updateSpeed=20;
 var score=0;
 var cnv;
+var nextb;
 
 function setup() {
   window.addEventListener("keydown", function(e) {
@@ -19,13 +20,20 @@ function setup() {
   cnv.parent('tetris');
 
   frameRate(50);
-
+  nextb = new Brick();
   b = new Brick();
   grid=new Grid();
 
   grid.createGrid();
 
   b.reset();
+  nextb.type=b.type;
+
+  nextb.reset();
+  for(var i= 0; i<nextb.blockArray.length;i++){
+    nextb.blockArray[i].x+=3;
+    nextb.blockArray[i].y-=4;
+  }
 }
 
 function draw() {
@@ -38,6 +46,7 @@ function draw() {
 
   b.update();
 
+  nextb.show();
   b.show();
 
   grid.showGrid();

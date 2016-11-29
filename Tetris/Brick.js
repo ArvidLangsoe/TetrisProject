@@ -72,6 +72,13 @@ function Brick(){
   this.lockAndReset=function(){
     this.lockBlocks()
     this.reset();
+    nextb.type=this.type;
+    nextb.reset();
+    for(var i= 0; i<nextb.blockArray.length;i++){
+      nextb.blockArray[i].x+=3;
+      nextb.blockArray[i].y-=4;
+    }
+
   }
 
   this.lockBlocks=function(){
