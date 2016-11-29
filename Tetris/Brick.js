@@ -134,7 +134,6 @@ function Brick(){
     }
     var newBorder=this.bordervalues();
 
-
     for(var i=0;i<4;i++){
       this.blockArray[i].x+=border[0]-newBorder[0];
       this.blockArray[i].y+=border[3]-newBorder[3];
@@ -144,7 +143,6 @@ function Brick(){
       for(var i=0;i<4;i++){
         this.blockArray[i].x+=1;
       }
-
     }
 
     if(this.checkPosition()){
