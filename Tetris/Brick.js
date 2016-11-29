@@ -140,54 +140,39 @@ function Brick(){
       this.blockArray[i].y+=border[3]-newBorder[3];
     }
 
-    for(var i=0;i<4;i++){
-      if(grid.gridArray[this.blockArray[i].y][this.blockArray[i].x]!=false){
-        overlapflag=true;
-      }
-    }
-    if(overlapflag){
+    if(this.checkPosition()){
       for(var i=0;i<4;i++){
         this.blockArray[i].x+=1;
       }
-      overlapflag=false;
+
     }
 
-    for(var i=0;i<4;i++){
-      if(grid.gridArray[this.blockArray[i].y][this.blockArray[i].x]!=false){
-        overlapflag=true;
-      }
-    }
-    if(overlapflag){
+    if(this.checkPosition()){
       for(var i=0;i<4;i++){
         this.blockArray[i].x-=2;
       }
-      overlapflag=false;
     }
-    for(var i=0;i<4;i++){
-      if(grid.gridArray[this.blockArray[i].y][this.blockArray[i].x]!=false){
-        overlapflag=true;
-      }
-    }
-    if(overlapflag){
+    if(this.checkPosition()){
       for(var i=0;i<4;i++){
         this.blockArray[i].x+=1;
         this.blockArray[i].y-=1;
       }
-      overlapflag=false;
     }
-    for(var i=0;i<4;i++){
-      if(grid.gridArray[this.blockArray[i].y][this.blockArray[i].x]!=false){
-        overlapflag=true;
-      }
-    }
-    if(overlapflag){
+    if(this.checkPosition()){
       for(var i=0;i<4;i++){
         this.blockArray[i].x=copyx[i];
         this.blockArray[i].y=copyy[i];
       }
-      overlapflag=false;
     }
+  }
 
+  this.checkPosition=function(){
+    for(var i=0;i<4;i++){
+      if(grid.gridArray[this.blockArray[i].y][this.blockArray[i].x]!=false){
+        return true;
+      }
+    }
+    return false;
 
   }
 
